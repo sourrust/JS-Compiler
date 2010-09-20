@@ -28,7 +28,7 @@ rm -rf data</string>
 	<key>name</key>
 	<string>Compress JS</string>
 	<key>output</key>
-	<string>replaceSelectedText</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.js</string>
 	<key>uuid</key>
