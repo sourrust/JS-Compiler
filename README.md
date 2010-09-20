@@ -7,4 +7,9 @@ To use the script just:
 
     ./JSCompiler.sh FILE.js
 
+###For Textmate
+
+    save the file
+    Command + Shift + C
+
 [closure]: http://closure-compiler.appspot.com/home "Closure Compiler"
