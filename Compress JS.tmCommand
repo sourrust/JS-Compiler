@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>bundleUUID</key>
+	<string>86F40B53-6620-4864-BCCB-44B3A379DC14</string>
+	<key>command</key>
+	<string>#!/bin/sh
+
+INPUT="$TM_FILEPATH"
+TEMP=`echo $INPUT | sed 's/.js/''/'`
+OUTPUT=$TEMP".min.js"
+OPTIONS="compilation_level=SIMPLE_OPTIMIZATIONS&amp;output_info=compiled_code&amp;output_format=text"
+
+CURL=curl
+CLOSURE="closure-compiler.appspot.com/compile"
+
+cat $INPUT &gt; data
+$CURL --data-urlencode js_code@data -d $OPTIONS $CLOSURE &gt; $OUTPUT
+
+rm -rf data</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@C</string>
+	<key>name</key>
+	<string>Compress JS</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>050603C4-D833-4308-B857-FF51D140CBDF</string>
+</dict>
+</plist>
